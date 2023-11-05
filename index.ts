@@ -29,9 +29,10 @@ app.get("/", (req, res) => {
 app.post("/predict", async (req, res) => {
   const { text } = req.body;
   console.log(text);
-  const response = await chat.predict(text);
-  console.log(response);
 
+  const response = await chat.predict(text);
+
+  console.log(response);
   res.json({ response });
 });
 
@@ -52,6 +53,8 @@ app.post("/generateText", async (req, res) => {
       },
     ],
   });
+
+  console.log(response);
   res.json({ response });
 });
 
@@ -72,6 +75,8 @@ app.post("/predictText", async (req, res) => {
       },
     ],
   });
+  
+  console.log(response);
   res.json({ response });
 });
 
